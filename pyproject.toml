@@ -5,7 +5,10 @@ description = "Bootstrap your Discord servers"
 authors = [{ name = "interrrp", email = "int@addictedto.coffee" }]
 license = { text = "MIT" }
 requires-python = "==3.12.*"
-dependencies = ["typer[all]>=0.9.0", "attrs>=23.1.0"]
+dependencies = [
+    "typer[all]>=0.9.0",
+    "pydantic>=2.5.2",
+]
 
 [project.scripts]
 cordstrap = "cordstrap.__main__:main"

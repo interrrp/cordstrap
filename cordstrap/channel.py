@@ -1,13 +1,9 @@
 from typing import Literal
 
-from attrs import define, field, validators
+from pydantic import BaseModel, Field
 
 
-@define(frozen=True)
-class Channel:
-    name: str = field(validator=validators.matches_re(r"[a-z0-9_-]+"))
-    kind: Literal["text", "voice"] = field(
-        default="text",
-        validator=validators.in_({"text", "voice"}),
-    )
-    topic: str = field(default="", validator=validators.max_len(1024))
+class Channel(BaseModel):
+    name: str = Field(pattern="^[a-z0-9-]+$")
+    kind: Literal["text", "voice"] = "text"
+    topic: str = Field(default="", max_length=1024)

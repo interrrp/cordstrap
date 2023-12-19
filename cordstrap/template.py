@@ -1,8 +1,7 @@
-import attrs
+from pydantic import BaseModel
 
 from cordstrap.channel import Channel
 
 
-@attrs.define
-class Template:
+class Template(BaseModel):
     channels: list[Channel]
