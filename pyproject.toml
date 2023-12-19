@@ -1,0 +1,35 @@
+[project]
+name = "cordstrap"
+version = "0.1.0"
+description = "Bootstrap your Discord servers"
+authors = [{ name = "interrrp", email = "int@addictedto.coffee" }]
+license = { text = "MIT" }
+requires-python = "==3.12.*"
+dependencies = [
+    "typer[all]>=0.9.0",
+]
+
+[project.scripts]
+cordstrap = "cordstrap.__main__:main"
+
+[tool.pdm.scripts]
+start = "python -m cordstrap"
+prepare = "pre-commit install"
+lint = { shell = "mypy . && ruff ." }
+format = { shell = "ruff format . && prettier --write ." }
+
+[tool.ruff]
+select = ["ALL"]
+ignore = [
+    "D", # Not everything needs a docstring
+]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+
+[tool.pdm]
+package-type = "application"
+
+[tool.pdm.dev-dependencies]
+dev = ["mypy>=1.7.1", "ruff>=0.1.8", "pre-commit>=3.6.0"]
