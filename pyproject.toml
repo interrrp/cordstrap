@@ -12,6 +12,10 @@ dependencies = [
     "requests>=2.31.0",
 ]
 
+[project.urls]
+homepage = "https://github.com/interrrp/cordstrap"
+repository = "https://github.com/interrrp/cordstrap"
+
 [project.scripts]
 cordstrap = "cordstrap.__main__:main"
 
