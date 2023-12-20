@@ -4,7 +4,7 @@ from typing import Literal, Self
 from pydantic import BaseModel, Field, model_validator
 
 TEXT_NAME_PATTERN = re.compile(r"^[a-z0-9-]{2,100}$")
-VOICE_NAME_PATTERN = re.compile(r"^[a-zA-Z0-9-]{2,100}$")
+VOICE_NAME_PATTERN = re.compile(r"^[a-zA-Z0-9- ]{2,100}$")
 
 
 class Channel(BaseModel):
