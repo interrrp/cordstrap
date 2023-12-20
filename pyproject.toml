@@ -1,6 +1,6 @@
 [project]
 name = "cordstrap"
-version = "0.1.0"
+version = "0.1.1"
 description = "Bootstrap your Discord servers"
 authors = [{ name = "interrrp", email = "int@addictedto.coffee" }]
 license = { text = "MIT" }
