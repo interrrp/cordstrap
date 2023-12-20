@@ -4,12 +4,10 @@ Bootstrap your Discord servers
 
 ## Usage
 
-1. Install `cordstrap` from source:
+1. Install `cordstrap` from [PyPI](https://pypi.org/project/cordstrap):
 
 ```sh
-git clone https://github.com/interrrp/cordstrap --depth 1
-cd cordstrap
-python3 -m pip install .
+pip install cordstrap
 ```
 
 2. Set up your `server.cordstrap.yaml` (see [example](./server.cordstrap.yaml))
