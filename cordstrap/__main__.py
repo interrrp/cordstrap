@@ -7,11 +7,15 @@ from cordstrap.discord import DiscordClient
 from cordstrap.template import Template
 
 
-def main_command(template_path: Path = Path("server.cordstrap.yaml")) -> None:
+def main_command(
+    token: str,
+    template_path: Path = Path("server.cordstrap.yaml"),
+) -> None:
+    client = DiscordClient(token)
+
     template = parse_yaml_file_as(Template, template_path)
-    client = DiscordClient("ABC")
     for channel in template.channels:
-        client.create_channel(123, channel)
+        client.create_channel(template.guild_id, channel)
 
 
 def main() -> None:
