@@ -9,13 +9,13 @@ from cordstrap.template import Template
 
 def main_command(
     token: str,
+    guild_id: int,
     template_path: Path = Path("server.cordstrap.yaml"),
 ) -> None:
     client = DiscordClient(token)
-
     template = parse_yaml_file_as(Template, template_path)
     for channel in template.channels:
-        client.create_channel(template.guild_id, channel)
+        client.create_channel(guild_id, channel)
 
 
 def main() -> None:
