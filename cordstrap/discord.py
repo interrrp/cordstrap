@@ -37,3 +37,10 @@ class DiscordClient:
                 "topic": channel.topic,
             },
         )
+
+    def update_guild(self, guild_id: int, data: dict[str, Any]) -> None:
+        self._request(
+            "PATCH",
+            f"guilds/{guild_id}",
+            json=data,
+        )

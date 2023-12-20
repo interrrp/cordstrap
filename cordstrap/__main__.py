@@ -13,7 +13,11 @@ def main_command(
     template_path: Path = Path("server.cordstrap.yaml"),
 ) -> None:
     client = DiscordClient(token)
+
     template = parse_yaml_file_as(Template, template_path)
+
+    client.update_guild(guild_id, {"name": template.name})
+
     for channel in template.channels:
         client.create_channel(guild_id, channel)
 
