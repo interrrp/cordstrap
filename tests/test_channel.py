@@ -9,6 +9,9 @@ def test_name_validation() -> None:
     with pytest.raises(ValueError, match="String should match pattern"):
         Channel(name="General!")
 
+    with pytest.raises(ValueError, match="String should match pattern"):
+        Channel(name="{", kind="voice")
+
 
 def test_kind_validation() -> None:
     assert Channel(name="general", kind="text").kind == "text"
