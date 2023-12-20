@@ -34,6 +34,7 @@ class DiscordClient:
             json={
                 "name": channel.name,
                 "type": 0 if channel.kind == "text" else 2,
+                "nsfw": channel.nsfw,
                 "topic": channel.topic,
             },
         )

@@ -10,6 +10,7 @@ VOICE_NAME_PATTERN = re.compile(r"^[a-zA-Z0-9- ]{2,100}$")
 class Channel(BaseModel):
     name: str
     kind: Literal["text", "voice"] = "text"
+    nsfw: bool = False
     topic: str = Field(default="", max_length=1024)
 
     @model_validator(mode="after")

@@ -6,6 +6,9 @@ channels:
   - name: general
     description: Talk about stuff
 
+  - name: nsfw-general
+    description: Talk about stuff, but NSFW
+
   - name: general-vc
     kind: voice
     description: Talk about stuff in voice chat
