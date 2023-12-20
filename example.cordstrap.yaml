@@ -1,0 +1,10 @@
+channels:
+  - name: announcements
+    description: Important announcements for the server
+
+  - name: general
+    description: Talk about stuff
+
+  - name: general-vc
+    kind: voice
+    description: Talk about stuff in voice chat
